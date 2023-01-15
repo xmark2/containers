@@ -1,0 +1,12 @@
+docker pull ubuntu:18.04
+
+docker pull ubuntu:19.04
+
+docker images
+
+docker inspect 4e...
+
+docker inspect c88..
+
+
+
