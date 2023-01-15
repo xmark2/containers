@@ -1,0 +1,20 @@
+docker run -itd --name attach-example ubuntu:latest
+
+docker ps
+
+docker attach attach-example1
+
+$ ctrl-p ctrl-q
+
+docker ps
+
+docker attach attach-example1
+
+$ exit
+
+docker ps
+
+docker ps -a
+
+docker system prune -fa
+

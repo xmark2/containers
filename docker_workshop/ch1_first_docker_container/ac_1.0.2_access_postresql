@@ -1,0 +1,13 @@
+docker exec -it <containerID> psql --username panoramic --password
+
+(list all database):
+$ \l
+
+(exit from shell)
+
+$ \q
+
+docker stop
+
+docker rm
+

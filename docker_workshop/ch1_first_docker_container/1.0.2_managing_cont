@@ -1,0 +1,66 @@
+docker pull ubuntu:18.04
+
+docker pull ubuntu:19.04
+
+docker images
+
+docker inspect 4e...
+
+docker inspect c88..
+
+docker run -d ubuntu:18.04
+
+docker ps -a
+
+docker run -i -t -d --name ubuntu1 ubuntu:18.04
+
+docker ps -a
+
+docker exec -it ubuntu1 /bin/bash
+
+$ echo "Hello world from ubuntu1" > hello-world.txt
+
+$ exit
+
+docker run -i -t -d --name ubuntu2 ubuntu:19.04
+
+docker exec -it ubuntu2 /bin/bash
+
+$ echo "Hello world from ubuntu2" > hello-world.txt
+
+$ exit
+
+docker ps
+
+docker exec -it ubuntu1 cat hello-world.txt
+
+docker exec -it ubuntu2 cat hello-world.txt
+
+docker stop ubuntu2
+
+docker ps
+
+docker ps -a
+
+docker start ubuntu2
+
+docker ps
+
+docker stop ubuntu1
+
+docker stop ubuntu2
+
+docker rm ubuntu1
+
+docker rm ubuntu2
+
+docker rm b29... (container_id)
+
+docker images
+
+docker rmi 4e... (image_id)
+
+
+!!! Notes Delete all that are not running !!!
+
+docker system prune -fa
