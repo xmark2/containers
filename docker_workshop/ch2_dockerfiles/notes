@@ -1,0 +1,82 @@
+mkdir custom-docker-image
+touch Dockerfile
+
+docker image build -t welcome:1.0 .
+docker image build -t welcome:2.0 .
+docker run welcome:1.0 "Docker Beginner's Guide"
+
+
+
+mkdir env-arg-exercise
+cd env-arg-exercise/
+touch Dockerfile
+
+docker image build -t env-arg --build-arg TAG=19.04 .
+docker images
+docker run env-arg
+
+
+mkdir workdir-copy-add-exercise
+touch index.html
+cd workdir-copy-add-exercise/
+ls -l
+touch Dockerfile
+docker image build -t workdir-copy-add .
+docker images
+docker run workdir-copy-add
+
+
+
+mkdir user-exercise
+cd user-exercise/
+touch Dockerfile
+docker image build -t user .
+docker images
+docker run user
+
+
+
+mkdir volume-exercise
+cd volume-exercise/
+touch Dockerfile
+docker image build -t volume .
+docker images
+docker run volume
+docker run -it --tty --name volume-container volume /bin/bash
+docker inspect volume-container
+docker volume inspect 94540d670e100549ca5b2c4e4c4a01a8dc9598f08e53886d6a23b682ee84eb56
+sudo ls -l /var/lib/docker/volumes/94540d670e100549ca5b2c4e4c4a01a8dc9598f08e53886d6a23b682ee84eb56/_data
+
+
+
+
+mkdir expose-healthcheck
+cd expose-healthcheck
+touch Dockerfile
+docker image build -t expose-healthcheck .
+docker container run -p 80:80 --name expose-healthcheck-container -d expose-healthcheck
+docker container list
+docker ps -a
+docker stop expose-healthcheck-container
+docker rm expose-healthcheck-container
+
+
+
+mkdir onbuild-parent
+cd onbuild-parent
+touch Dockerfile
+docker image build -t onbuild-parent .
+docker container run -p 80:80 --name onbuild-parent-container -d onbuild-parent
+docker ps -a
+docker stop onbuild-parent-container
+docker rm onbuild-parent-container
+
+cd ..
+mkdir onbuild-child
+cd onbuild-child
+touch index.html
+touch Dockerfile
+docker image build -t onbuild-child .
+docker run -p 80:80 --name onbuild-child-container -d onbuild-child
+docker stop onbuild-child-container
+docker rm onbuild-child-container
