@@ -80,3 +80,17 @@ docker image build -t onbuild-child .
 docker run -p 80:80 --name onbuild-child-container -d onbuild-child
 docker stop onbuild-child-container
 docker rm onbuild-child-container
+
+
+
+mkdir ac_201
+cd ac_201/
+touch welcome.php
+touch Dockerfile
+ls -l
+docker image build -t ac_201 .
+docker run -p 80:80 --name ac_201_container -d ac_201
+docker stop ac_201_container
+docker rm ac_201_container
+
+
