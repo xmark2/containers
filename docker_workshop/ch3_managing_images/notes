@@ -1,0 +1,75 @@
+mkdir 301_image_layers
+cd 301_image_layers/
+touch Dockerfile
+docker build -t basic-app .
+docker history basic-app
+docker build -t basic-app .
+docker images
+docker image inspect a54ff073147b
+sudo du -sh /var/lib/docker/overlay2/
+docker images -a
+docker image prune
+docker images -a
+docker images
+sudo du -sh /var/lib/docker/overlay2/
+docker image prune
+
+
+
+
+
+mkdir 302_increase_build_reduce_layers
+cd 302_increase_build_reduce_layers/
+touch Dockerfile
+docker rmi -f $(docker images -a -q)
+docker ps -a
+docker images
+
+docker pull hello-world
+docker rmi -f $(docker images -a -q)
+docker images
+docker pull alpine
+
+time docker build -t basic-app .
+docker history basic-app
+
+mkdir base_image
+cd base_image/
+touch Dockerfile
+docker build -t basic-base .
+cd ..
+time docker build -t basic-app .
+docker history basic-app
+docker build --cache-from basic-base -t basic-app .
+docker run -it basic-app sh
+docker ps -a
+
+docker commit 9824ad801d55 basic-app-test
+docker history basic-app-test
+docker run basic-app-test cat prod_test_data.txt
+
+
+
+docker run -it basic-app sh
+$ tar -czf basebackup.tar.gz --exclude=backup.tar.gz --exclude=proc --exclude=tmp --exclude=mnt --exclude=dev --exclude=sys /
+
+cat /tmp/basebackup.tar.gz | docker import - mynew-base
+docker images mynew-base
+docker history mynew-base
+docker run mynew-base ls -l /var/www/html/
+
+
+
+
+mkdir 304_scratch
+cd 304_scratch/
+touch test.c
+g++ -o test -static test.c
+touch Dockerfile
+docker run scratchtest
+sudo docker run scratchtest
+docker images scratchtest
+
+
+
+
