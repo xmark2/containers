@@ -29,7 +29,7 @@ docker pull hello-world
 docker rmi -f $(docker images -a -q)
 docker images
 docker pull alpine
-
+tar zcvf Dockerfile.tar.gz Dockerfile
 time docker build -t basic-app .
 docker history basic-app
 
@@ -72,4 +72,99 @@ docker images scratchtest
 
 
 
+docker rmi -f $(docker images -a -q)
+docker pull busybox
+docker images
+docker tag 66ba00ad3de8 new_busybox:ver_1
+docker tag new_busybox:ver_1 xmark2/busybox:ver_1.1
+docker images
+mkdir 305_tagging_images
+cd 305_tagging_images/
+echo "FROM new_busybox" > Dockerfile
+echo "FROM new_busybox:ver_1" > Dockerfile
+docker build -t built_image:ver_1.1.1 .
 
+
+
+mkdir 306_issue_with_latest_tag
+cd 306_issue_with_latest_tag/
+touch Dockerfile
+docker build -t xmark2/test .
+docker run xmark2/test
+docker tag xmark2/test xmark2/test:version1
+docker build -t xmark2/test:version2 .
+docker run xmark2/test
+docker run xmark2/test:latest
+docker run xmark2/test:version2
+
+
+
+mkdir 307_automating_tagging
+cd 307_automating_tagging/
+touch Dockerfile
+docker build -t basic-base .
+mkdir ver1
+cd ver1
+touch Dockerfile
+docker images
+git log -1 --format=%h
+git log
+docker build -t basic-app:$(git log -1 --format=%h) .
+
+tar zcvf Dockerfile.tar.gz Dockerfile
+docker build -t basic-app:$(git log -1 --format=%h) .
+docker build -t basic-app --build-arg GIT_COMMIT=$(git log -1 --format=%h) .
+
+docker inspect -f '{{index .ContainerConfig.Labels "git-commit"}}' basic-app
+echo "1.0.0" > VERSION
+touch build.sh
+chmod +x build.sh
+./build.sh
+cat VERSION
+./build.sh
+docker images xmark2/basic-app
+
+
+
+
+mkdir 308_transporting_images
+cd 308_transporting_images/
+touch Dockerfile
+docker images
+docker save -o /tmp/basic-app.tar xmark2/basic-app:1.0.0
+du -sh /tmp/basic-app.tar
+docker rmi -f 3e422af741df
+docker load -i /tmp/basic-app.tar
+docker images xmark2/basic-app
+
+
+
+# 309
+docker tag basic-app xmark2/basic-app:ver1
+docker push xmark2/basic-app:ver1
+docker login
+docker push xmark2/basic-app:ver1
+
+
+
+
+# 310
+cd /etc/
+sudo nano hosts
+
+# add the following line
+127.0.0.1 dev.docker.local
+
+docker pull registry
+docker run -d -p 5000:5000 --restart=always --name registry registry
+docker ps
+docker tag xmark2/basic-app:ver1 dev.docker.local:5000/basic-app:ver1
+docker images
+docker image remove dev.docker.local:5000/basic-app:ver1
+
+docker pull dev.docker.local:5000/basic-app:ver1
+docker tag xmark2/basic-app:ver1 dev.docker.local:5000/basic-app:ver1
+docker push dev.docker.local:5000/basic-app:ver1
+docker image remove dev.docker.local:5000/basic-app:ver1
+
+docker pull dev.docker.local:5000/basic-app:ver1
