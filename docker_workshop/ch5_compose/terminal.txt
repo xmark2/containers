@@ -1,0 +1,35 @@
+  644  docker-compose version
+  645  mkdir 502_services_with_docker_compose
+  646  cd 502_services_with_docker_compose/
+  647  touch .env
+  648  touch docker_compose.yaml
+  649  touch docker-compose.yaml
+  650  export ENV_FROM_SHELL=WORLD
+  651  docker-compose up
+  652  docker images
+  653  cd ..
+  654  mkdir 503_service_dependency
+  655  cd 503_service_dependency/
+  656  touch docker-compose.yaml
+  657  ls -l
+  658  docker-compose up
+  659  cd ..
+  660  mkdir ac_501_wordpress
+  661  cd ac_501_wordpress/
+  662  touch docker-compose.yaml
+  663  docker-compose up --detach
+  664  docker-compose ps
+  665  cd ..
+  666  mkdir ac_502_trekking_app
+  667  cd ac_502_trekking_app/
+  668  touch docker-compose.yaml
+  669  docker-compose up -d
+  670  docker compose ps
+  671  docker compose stop ac_502_trekking_app_db_1
+  672  docker compose stop db
+  673  docker compose stop nginx
+  674  docker compose web
+  675  docker compose stop web
+  676  docker compose ps
+  677  docker compose rm -f
+  678  docker compose ps
