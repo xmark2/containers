@@ -1,0 +1,634 @@
+    1  sudo apt update
+    2  sudo apt install -y build-essential linux-headers-$(uname -r)
+    3  sudo mount /dev/cdrom /media
+    4  cd /media
+    5  ls -l
+    6  sudo .VboxLinuxAdditions.run
+    7  sudo ./VboxLinuxAdditions.run
+    8  sudo VboxLinuxAdditions.run
+    9  cd ..
+   10  sudo /media/VboxLinuxAdditions.run
+   11  sudo chmod a+x /media/VboxLinuxAdditions.run
+   12  sudo apt-get update && sudo apt-get upgrade
+   13  sudo add-apt-repository multiverse
+   14  sudo apt update
+   15  sudo apt install virtualbox-guest-utils virtualbox-guest-x11
+   16  sudo reboot
+   17  sudo apt update
+   18  sudo apt install -y build-essential linux-headers-$(uname -r)
+   19  sudo VBoxLinuxAdditions.run
+   20  sudo apt install build-essential dkms linux-headers-$(uname -r)
+   21  lsblk | grep "rom"
+   22  sudo ./VBoxLinuxAdditions.run
+   23  sudo usermod -a -G vboxsf $USER
+   24  sudo reboot
+   25  sudo apt update
+   26  sudo apt install -y python3-pip
+   27  sudo snap install pycharm-community --classic
+   28  sudo snap list pycharm-community
+   29  sudo apt install apt-transport-https curl gnupg-agent ca-certificates software-properties-common -y
+   30  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+   31  sudo apt-key list
+   32  docker --version
+   33  sudo docker --version
+   34  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+   35  sudo apt install docker-ce docker-ce-cli containerd.io -y
+   36  sudo usermod -aG docker $USER
+   37  newgrp docker
+   38  docker version
+   39  docker compose version
+   40  docker-compose version
+   41  mkdir -p ~/.docker/cli-plugins/
+   42  curl -SL https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
+   43  chmod +x ~/.docker/cli-plugins/docker-compose
+   44  docker compose version
+   45  docker compose
+   46  curl -fsSL https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add
+   47  sudo add-apt-repository "deb https://download.sublimetext.com/ apt/stable/"
+   48  sudo apt install sublime-text
+   49  git --version
+   50  docker ps -a
+   51  docker ps
+   52  docker version
+   53  sudo docker version
+   54  ls -l
+   55  git init
+   56  git status
+   57  touch .gitignore
+   58  git status
+   59  git add .
+   60  git commit -m "flask practice"
+   61  git branch -M main
+   62  git remote add origin https://github.com/xmark2/PySEBootcamp.git
+   63  git push -u origin main
+   64  git config --list
+   65  git config --global user.name "xmark2"
+   66  git config --global user.email xmark2@gmail.com
+   67  git config -list
+   68  git config --list
+   69  git config --global credential.helper store
+   70  git push -u origin main
+   71  clear
+   72  sudo docker-compose up --build
+   73  sudo docker compose up --build
+   74  docker compose
+   75  docker compose up --build
+   76  sudo docker compose up --build
+   77  sudo docker-compose up --build
+   78  sudo docker build -t myapp:latest .
+   79  sudo docker rm myapp && sudo docker build -t myapp:latest . && sudo docker run --name myapp -p 8080:8080 myapp:latest
+   80  sudo docker build -t myapp:latest . && sudo docker run --name myapp -p 8080:8080 myapp:latest
+   81  curl -SL https://github.com/docker/compose/releases/download/v2.12.2/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+   82  sudo apt update
+   83  sudo apt install build-essential dkms linux-headers-$(uname -r)
+   84  docker version
+   85  docker compose version
+   86  docker-compose version
+   87  docker compose version
+   88  docker ps
+   89  docker ps -a
+   90  docker ps
+   91  sudo snap install datagrip --classic
+   92  pip list
+   93  pip freeze > requirements.txt
+   94  pip install sys
+   95  pip list
+   96  pip install certifi==2022.9.24 charset-normalizer==2.1.1 docutils==0.19 idna==3.4 Kivy==2.1.0 kivy-deps.angle==0.3.3 kivy-deps.glew==0.3.1 kivy-deps.sdl2==0.4.5 Kivy-examples==2.1.0 Kivy Garden==0.1.5 KivyMD-Components==0.1.6 KivyMDEmulator==1.0.4 Pygments==2.13.0 pypiwin32==223 pywin32==304 requests==2.28.1 urllib3==1.26.12
+   97  pip list
+   98  pip install --upgrade pip
+   99  pip list
+  100  pip install pywin32==304
+  101  pip list
+  102  pip -r requirements.txt 
+  103  pip install -r requirements.txt
+  104  pip list
+  105  ls -l
+  106  cd PycharmProjects/
+  107  ls -l
+  108  git clone https://github.com/xmark2/kivygui.git
+  109  ls -l
+  110  cd kivygui/
+  111  ls -l
+  112  git init
+  113  git branch -m master
+  114  git init
+  115  ls -l
+  116  git remote -v
+  117  git remove add master https://github.com/xmark2/kivygui.git
+  118  git remote add master https://github.com/xmark2/kivygui.git
+  119  git remove -v
+  120  git remote -v
+  121  git status
+  122  git pull
+  123  git pull master master
+  124  wget https://github.com/shiftkey/desktop/releases/download/release-2.9.3-linux3/GitHubDesktop-linux-2.9.3-linux3.deb && sudo dpkg -i GitHubDesktop-linux-2.9.3-linux3.deb
+  125  github-desktop --disable-gpu-sandbox
+  126  docker --version
+  127  docker-compose --version
+  128  docker --version
+  129  docker run hello-world
+  130  docker ps
+  131  docker ps -a
+  132  docker images
+  133  docker run hello-world
+  134  docker ps -a
+  135  docker rm pensive_northcutt 
+  136  docker rm trusting_snyder
+  137  docker ps -a
+  138  docker images
+  139  docker pull ubuntu:18.04
+  140  docker pull ubuntu:19.04
+  141  docker images
+  142  docker run -d ubuntu:18.04
+  143  docker ps -a
+  144  docker run -i -t -d --name ubuntu1 ubuntu:18.04
+  145  docker ps -a
+  146  docker exec -it ubuntu1 /bin/bash
+  147  docker run -i -t -d --name ubuntu2 ubuntu:19.04
+  148  docker exec -it ubuntu2 /bin/bash
+  149  docker exec -it ubuntu1 /bin/bash hellow_world.txt
+  150  docker ps -a
+  151  docker exec -it ubuntu1 /bin/bash cat hellow_world.txt
+  152  docker exec -it ubuntu1 cat hellow_world.txt
+  153  docker exec -it ubuntu2 cat hello_world.txt
+  154  docker stop ubuntu2
+  155  docker exec -it ubuntu2 cat hello_world.txt
+  156  docker ps
+  157  docker ps -a
+  158  docker stop ubuntu1
+  159  docker ps -a
+  160  docker rm ubuntu1
+  161  docker rm ubuntu2
+  162  docker ps -a
+  163  docker rm frosty_napier
+  164  docker ps -a
+  165  docker ps
+  166  docker images
+  167  docker system prune -fa
+  168  docker images
+  169  history
+  170  docker run -itd -e "POSTGRES_USER=panoramic" -e "POSTGRES_PASSWORD=trekking" postgres:12
+  171  docker ps
+  172  docker exec -it 5268bbd63dd4 psql --username panoramic --password
+  173  docker ps
+  174  docker stop
+  175  docker stop clever_boyd
+  176  docker ps -a
+  177  docker rmi postgres:12
+  178  docker ps
+  179  docker rm  postgres:12
+  180  docker rmi postgres:12
+  181  docker ps
+  182  docker images
+  183  docker rmi 3d6880d04326
+  184  docker ps -a
+  185  docker rm clever_boyd
+  186  docker ps -a
+  187  docker rmi 3d6880d04326
+  188  docker ps -a
+  189  docker ps
+  190  docker images
+  191  ls -l
+  192  cd PycharmProjects/
+  193  ls -l
+  194  cd containers/
+  195  ls -l
+  196  cd docker_workshop/
+  197  ls -l
+  198  cd ch2_dockerfiles/
+  199  ls -l
+  200  mkdir custom-docker-image
+  201  cd custom-docker-image/
+  202  touch Dockerfile
+  203  ls -l
+  204  docker images
+  205  docker image build -t welcome:1.0 .
+  206  docker image build -t welcome:2.0 .
+  207  docker images
+  208  docker run welcome:1.0
+  209  docker run welcome:2.0
+  210  docker run welcome:1.0 "Docker Beginner's Guide"
+  211  cd ..
+  212  mkdir env-arg-exercise
+  213  cd env-arg-exercise/
+  214  touch Dockerfile
+  215  history
+  216  docker image build -t env-arg --build-arg TAG=19.04
+  217  docker image build -t env-arg --build-arg TAG=19.04 .
+  218  docker images
+  219  docker run env-arg
+  220  docker container run env-arg
+  221  history
+  222  cd ..
+  223  mkdir workdir-copy-add-exercise
+  224  touch index.html
+  225  cd workdir-copy-add-exercise/
+  226  ls -l
+  227  touch Dockerfile
+  228  docker image build -t workdir-copy-add .
+  229  docker images
+  230  docker run workdir-copy-add
+  231  history
+  232  cd ..
+  233  mkdir user-exercise
+  234  cd user-exercise/
+  235  touch Dockerfile
+  236  whoami
+  237  docker image build -t user .
+  238  docker images
+  239  docker run user
+  240  docker ps -a
+  241  docker touch epic_lichterman
+  242  docker attach epic_lichterman
+  243  docker start epic_lichterman
+  244  docker ps
+  245  docker attach epic_lichterman
+  246  history
+  247  cd ..
+  248  mkdir volume-exercise
+  249  cd volume-exercise/
+  250  touch Dockerfile
+  251  docker image build -t volume .
+  252  docker images
+  253  docker run volume
+  254  docker run -it --tty --name volume-container volume /bin/bash
+  255  docker inspect volume-container
+  256  docker volume inspect 94540d670e100549ca5b2c4e4c4a01a8dc9598f08e53886d6a23b682ee84eb56
+  257  history
+  258  sudo ls -l
+  259  sudo ls -l /var/lib/docker/volumes/94540d670e100549ca5b2c4e4c4a01a8dc9598f08e53886d6a23b682ee84eb56/_data
+  260  cd ..
+  261  mkdir expose-healthcheck
+  262  cd expose-healthcheck
+  263  touch Dockerfile
+  264  vim Dockerfile
+  265  ls -l
+  266  docker image build -t expose-healthcheck .
+  267  docker container run -p 80:80 --name expose-healthcheck-container -d expose-healthcheck
+  268  docker container list
+  269  docker ps -a
+  270  docker stop expose-healthcheck
+  271  docker stop expose-healthcheck-container
+  272  docker rm expose-healthcheck-container
+  273  history
+  274  cd ..
+  275  mkdir onbuild-parent
+  276  cd onbuild-parent
+  277  touch Dockerfile
+  278  docker image build -t onbuild-parent .
+  279  docker container run -p 80:80 --name onbuild-parent-container -d onbuild-parent
+  280  docker ps -a
+  281  docker stop onbuild-parent-container
+  282  docker rm onbuild-parent-container
+  283  cd ..
+  284  mkdir onbuild-child
+  285  cd onbuild-
+  286  cd onbuild-child
+  287  touch index.html
+  288  touch Dockerfile
+  289  docker image build -t onbuild-child .
+  290  docker run -p 80:80 --name onbuild-child-container -d onbuild-child
+  291  docker stop onbuild-child-container
+  292  docker rm onbuild-child-container
+  293  history
+  294  cd ..
+  295  mkdir ac_202
+  296  cd ac_202/
+  297  touch welcome.php
+  298  touch Dockerfile
+  299  LS -L
+  300  ls -l
+  301  docker image build -t ac_202 .
+  302  docker run -p 80:80 --name ac_202_container -d ac_202
+  303  history
+  304  docker ps -a
+  305  docker ps
+  306  docker stop ac_202_container
+  307  docker rm ac_202_container
+  308  docker images
+  309  history
+  310  cd..
+  311  cd ..
+  312  cd ch3_managing_images/
+  313  ls -l
+  314  cd 301_image_layers/
+  315  ls -l
+  316  touch Dockerfile
+  317  ls -l
+  318  docker build -t basic-app .
+  319  docker history basic-app
+  320  docker build -t basic-app .
+  321  docker images
+  322  docker image inspect a54ff073147b
+  323  du -sh /var/lib/docker/overlay2
+  324  du -sh /var/lib/docker/overlay2/
+  325  sudo du -sh /var/lib/docker/overlay2/
+  326  docker images -a
+  327  docker image prune
+  328  docker images -a
+  329  docker images
+  330  sudo du -sh /var/lib/docker/overlay2/
+  331  docker image prune
+  332  history
+  333  cd ..
+  334  mkdir 302_increase_build_reduce_layers
+  335  cd 302_increase_build_reduce_layers/
+  336  touch Dockerfile
+  337  docker rmi -f $(docker images -a -q)
+  338  docker ps -a
+  339  docker images
+  340  docker containers
+  341  docker ps
+  342  cd ~
+  343  ls -l
+  344  cd ..
+  345  ls -l
+  346  cd ubuntu
+  347  ls -l
+  348  /etc
+  349  cd /etc
+  350  sudo nano hosts
+  351  history
+  352  cd ~/etc
+  353  cd ~
+  354  cd etc
+  355  cd /etc/
+  356  ls -l
+  357  cd PycharmProjects/
+  358  ls -l
+  359  cd containers/
+  360  cd  docker_workshop/
+  361  cd ch3_managing_images/
+  362  cd 302_increase_build_reduce_layers/
+  363  ls -l
+  364  docker rmi -f $(docker images -a -q)
+  365  docker pull hello-world
+  366  docker rmi -f $(docker images -a -q)
+  367  docker images
+  368  docker pull alpine
+  369  tar zcvf Dockerfile.tar.gz Dockerfile
+  370  time docker build -t basic-app .
+  371  docker history basic-app
+  372  wget -0 test.txt https://github.com/PacktWorkshops/The-Docker-Workshop/blob/master/Chapter03/Exercise3.02/100MB.bin
+  373  wget -o test.txt https://github.com/PacktWorkshops/The-Docker-Workshop/blob/master/Chapter03/Exercise3.02/100MB.bin
+  374  ls -l
+  375  rm test.txt
+  376  ls -l
+  377  time docker build -t basic-app .
+  378  docker history basic-app
+  379  time docker build -t basic-app .
+  380  docker history basic-app
+  381  mkdir base_image
+  382  cd base_image/
+  383  touch Dockerfile
+  384  docker build -t basic-base .
+  385  cd ..
+  386  time docker build -t basic-app .
+  387  docker history basic-app
+  388  docker build --cache-from basic-base -t basic-app .
+  389  docker run -it basic-app sh
+  390  docker ps -a
+  391  docker commit 9824ad801d55 basic-app-test
+  392  docker history basic-app-test
+  393  docker run basic-app-test cat prod_test_data.txt
+  394  history
+  395  cd ..
+  396  docker run -it basic-app sh
+  397  docker ps
+  398  docker ps -a
+  399  docker run -it basic-app sh
+  400  cat /tmp/basebackup.tar.gz | docker import - mynew-base
+  401  docker images mynew-base
+  402  docker history mynew-base
+  403  docker run mynew-base ls -l /var/www/html/
+  404  history
+  405  docker pull scratch
+  406  mkdir 303_scratch
+  407  ls -l
+  408  cd 303_scratch/
+  409  touch test.c
+  410  g++ -o test -static test.c
+  411  touch Dockerfile
+  412  docker run scratchtest
+  413  sudo docker run scratchtest
+  414  docker images scratchtest
+  415  cd ..
+  416  history
+  417  docker rmi -f $(docker images -a -q)
+  418  docker ps -a
+  419  docker ps
+  420  docker images
+  421  docker pull busybox
+  422  docker images
+  423  docker tag 66ba00ad3de8 new_busybox:ver_1
+  424  docker tag new_busybox:ver_1 xmark2/busybox:ver_1.1
+  425  docker images
+  426  mkdir 305_tagging_images
+  427  cd 305_tagging_images/
+  428  echo "FROM new_busybox" > Dockerfile
+  429  echo "FROM new_busybox:ver_1" > Dockerfile
+  430  docker build -t built_image:ver_1.1.1 .
+  431  docker images
+  432  cd..
+  433  cd ..
+  434  mkdir 306_issue_with_latest_tag
+  435  cd 306
+  436  cd 306_issue_with_latest_tag/
+  437  ls -l
+  438  touch Dockerfile
+  439  history
+  440  docker build -t xmark2/test .
+  441  docker run xmark2/test:latest
+  442  docker run xmark2/test
+  443  docker tag xmark2/test xmark2/test:version1
+  444  docker build -t xmark2/test:version2 .
+  445  docker run xmark2/test
+  446  docker run xmark2/test:latest
+  447  docker run xmark2/test:version2
+  448  history
+  449  cd ..
+  450  mkdir 307_automating_tagging
+  451  cd 307_automating_tagging/
+  452  touch Dockerfile
+  453  docker build -t basic-base .
+  454  mkdir ver1
+  455  cd ver1
+  456  touch Dockerfile
+  457  docker images
+  458  git log -l --format=%h
+  459  git log -1 --format=%h
+  460  git log
+  461  docker build -t basic-app:$(git log -1 --format=%h) .
+  462  history
+  463  tar zcvf Dockerfile.tar.gz Dockerfile
+  464  docker build -t basic-app:$(git log -1 --format=%h) .
+  465  docker build -t basic-app --build-arg GIT_COMMIT=$(git log -1 --format=%h) .
+  466  git log -1 --format=%h
+  467  docker inspect -f '{{index .ContainerConfig.Labels "git-commit"}}' basic-app
+  468  echo "1.0.0" > VERSION
+  469  touch build.sh
+  470  ls -l
+  471  chmod +x build.sh
+  472  ls -l
+  473  ./build.sh
+  474  cat VERSION
+  475  ./build.sh
+  476  docker images xmark2/basic-app
+  477  history
+  478  cd ..
+  479  mkdir 308_transporting_images
+  480  cd 308_transporting_images/
+  481  touch Dockerfile
+  482  docker images
+  483  docker save -o /tmp/basic-app.tar xmark2/basic-app:1.0.0
+  484  du -sh /tmp/basic-app.tar
+  485  docker rmi -f 3e422af741df
+  486  docker load -i /tmp/basic-app.tar
+  487  docker image: xmark2/basic-app
+  488  docker images xmark2/basic-app
+  489  history
+  490  cd ..
+  491  docker images
+  492  docker tag basic-app xmark2/basic-app:ver1
+  493  docker push xmark2/basic-app:ver1
+  494  docker login
+  495  docker push xmark2/basic-app:ver1
+  496  history
+  497  docker pull registry
+  498  docker run -d -p 5000:5000 --restart=always --name registry
+  499  docker run -d -p 5000:5000 --restart=always --name registry registry
+  500  docker ps
+  501  docker tag xmark2/basic-app:ver1 dev.docker.local:5000/basic-app:ver1
+  502  docker images
+  503  docker image remove dev.docker.local:5000/basic-app:ver1
+  504  docker images
+  505  docker pull dev.docker.local:5000/basic-app:ver1
+  506  docker tag xmark2/basic-app:ver1 dev.docker.local:5000/basic-app:ver1
+  507  docker push dev.docker.local:5000/basic-app:ver1
+  508  docker image remove dev.docker.local:5000/basic-app:ver1
+  509  docker images
+  510  docker pull dev.docker.local:5000/basic-app:ver1
+  511  docker images
+  512  history
+  513  mkdir ac_301_build_using_git_hash_versioning
+  514  cd ac_301
+  515  cd ac_301_build_using_git_hash_versioning/
+  516  touch build.sh
+  517  ls -l
+  518  ./build.sh
+  519  sudo ./build.sh
+  520  chmod +x build.sh
+  521  ./build.sh
+  522  docker run -itd -e "POSTGRES_USER=panoramic" -e "POSTGRES_PASSWORD=trekking" postgres:12
+  523  ./build.sh
+  524  touch Dockerfile
+  525  ./build.sh
+  526  cd ..
+  527  mkdir ac_302_local_registry_storage
+  528  cd ac_302_local_registry_storage/
+  529  cwd()
+  530  pwd
+  531  docker run -d -p 5000:5000 --restart=always --name registry -v /home/ubuntu/PycharmProjects/containers/docker_workshop/ch3_managing_images/ac_302_local_registry_storage/registry:/var/lib/registry:rw registry
+  532  docker rmi -f $(docker images -a -q)
+  533  docker images
+  534  docker ps -a
+  535  docker ps
+  536  docker rmi registry
+  537  docker stop registry
+  538  docker ps
+  539  docker stop silly_almeida
+  540  docker ps
+  541  docker images
+  542  docker rmi registry
+  543  docker system prune -fa
+  544  docker images
+  545  docker ps
+  546  docker ps -a
+  547  docker run -d -p 5000:5000 --restart=always --name registry -v /home/ubuntu/PycharmProjects/containers/docker_workshop/ch3_managing_images/ac_302_local_registry_storage/registry:/var/lib/registry:rw registry
+  548  docker push dev.docker.local:5000/basic-app:ver1
+  549  docker pull dev.docker.local:5000/basic-app:ver1
+  550  docker images
+  551  docker rmi 81c944c2288b
+  552  docker ps -a
+  553  docker stop registry
+  554  docker ps -a
+  555  docker rm registry
+  556  docker ps -a
+  557  docker images
+  558  docker rmi registry
+  559  docker images
+  560  docker ps -a
+  561  docker ps
+  562  docker system prune -fa
+  563  docker run hello-world
+  564  docker ps -a
+  565  docker system prune -fa
+  566  docker ps -a
+  567  docker images
+  568  docker ps
+  569  docker version
+  570  history
+  571  history > test.txt
+  572  cd ..
+  573  history > test.txt
+  574  history > terminal.txt
+  575  cd ch4_multi_stage/
+  576  ls -l
+  577  mkdir normal_build
+  578  cd normal_build/
+  579  ls -l
+  580  touch welcome.go
+  581  ls -l
+  582  touch Dockerfile
+  583  docker build -t welcome:v1 .
+  584  docker images
+  585  docker system prune -fa
+  586  docker images
+  587  docker ps -a
+  588  docker ps
+  589  go welcome.go 
+  590  go run welcome.go 
+  591  docker build -t welcome:v1 .
+  592  docker images
+  593  cd ..
+  594  mkdir builder_pattern
+  595  cd builder_pattern/
+  596  touch welcome.go
+  597  touch Dockerfile.build
+  598  touch Dockerfile
+  599  touch build.sh
+  600  chmod +x build.sh
+  601  ./build.sh
+  602  docker images
+  603  ./build.sh
+  604  docker system prune -fa
+  605  docker images
+  606  docker ps -a
+  607  docker ps
+  608  ./build.sh
+  609  docker images
+  610  docker image prune
+  611  docker images
+  612  ./build.sh
+  613  docker images
+  614  ./build.sh
+  615  docker images
+  616  ./build.sh
+  617  cd ..
+  618  mkdir multi_stage
+  619  cd multi_stage/
+  620  touch welcome.go
+  621  touch Dockerfile
+  622  docker build -t welcome-optimized:v1 .
+  623  docker images
+  624  cd ..
+  625  ls -l
+  626  mkdir ac_401_goserver_multistage
+  627  cd ac_401_goserver_multistage/
+  628  ls -l
+  629  touch main.go
+  630  touch Dockerfile
+  631  docker build -t ac_401:ver1 .
+  632  docker ps -a
+  633  docker images
+  636  docker run -p 8080:8080 ac_401:ver1

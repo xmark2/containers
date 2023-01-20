@@ -1,0 +1,58 @@
+  575  cd ch4_multi_stage/
+  577  mkdir 401_normal_build
+  578  cd 401_normal_build/
+  580  touch welcome.go
+  582  touch Dockerfile
+  583  docker build -t welcome:v1 .
+  585  docker system prune -fa
+  587  docker ps -a
+  588  docker ps
+  589  go welcome.go 
+  590  go run welcome.go 
+  591  docker build -t welcome:v1 .
+  592  docker images
+
+  594  mkdir 402_builder_pattern
+  595  cd 402_builder_pattern/
+  596  touch welcome.go
+  597  touch Dockerfile.build
+  598  touch Dockerfile
+  599  touch build.sh
+  600  chmod +x build.sh
+  601  ./build.sh
+  602  docker images
+  603  ./build.sh
+  604  docker system prune -fa
+  605  docker images
+  606  docker ps -a
+  607  docker ps
+  608  ./build.sh
+  609  docker images
+  610  docker image prune
+  611  docker images
+  612  ./build.sh
+  613  docker images
+  614  ./build.sh
+  615  docker images
+  616  ./build.sh
+  617  cd ..
+  618  mkdir 403_multi_stage
+  619  cd 403_multi_stage/
+  620  touch welcome.go
+  621  touch Dockerfile
+  622  docker build -t welcome-optimized:v1 .
+  623  docker images
+  624  cd ..
+  625  ls -l
+  626  mkdir ac_401_goserver_multistage
+  627  cd ac_401_goserver_multistage/
+  628  ls -l
+  629  touch main.go
+  630  touch Dockerfile
+  631  docker build -t ac_401:ver1 .
+  632  docker ps -a
+  633  docker images
+  634  docker run ac_401:ver1
+  635  docker run -p 8080:8080 ac_401
+  636  docker run -p 8080:8080 ac_401:ver1
+  637  history > terminal.txt
