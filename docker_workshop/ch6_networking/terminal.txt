@@ -1,0 +1,60 @@
+  764  docker network ls
+  765  ifconfig
+  766  docker run -d --name webserver1 nginx:latest
+  767  docker ps
+  768  docker inspect webserver1
+  769  history > terminal.txt
+
+  $browser
+  172.17.0.2
+
+  770  curl 172.17.0.2:80
+  771  docker run -d -p 8080:80 --name webserver2 nginx:latest
+  772  docker ps
+  773  docker inspect webserver2
+  774  docker exec -it webserver1 /bin/bash
+
+  $ apt-get update && apt-get install -y inetutils-ping
+  $ ping 172.17.0.2
+  $ ping 172.17.0.3
+  $ ping 172.17.0.4
+  $ curl 172.17.0.3
+
+  785  docker run -itd --name containerlink1 alpine:latest
+  786  docker run -itd --name containerlink2 --link containerlink1 alpine:latest
+  787  docker exec -it containerlink2 /bin/sh
+
+	ping containerlink1
+	cat /etc/hosts
+
+  790  docker exec -it containerlink1 /bin/sh
+
+  792  docker network create dnsnet --subnet 192.168.54.0/24 --gateway 192.168.54.1
+  793  docker network ls
+  794  docker network inspect dnsnet
+  795  ifconfig
+  796  docker run -itd --network dnsnet --network-alias alpinedns1 --name alpinedns1 alpine:latest
+  797  docker run -itd --network dnsnet --network-alias alpinedns2 --name alpinedns2 alpine:latest
+  798  docker ps
+  799  docker inspect alpinedns1
+  800  docker inspect alpinedns2
+  801  docker inspect alpinedns1
+  802  docker inspect alpinedns2
+  803  docker exec -it alpinedns1 /bin/sh
+  804  docker exec -it alpinedns2 /bin/sh
+  805  cat /etc/hosts
+  806  docker stop containerlink1
+  807  docker stop containerlink2
+  808  docker stop alpinedns1
+  809  docker stop alpinedns2
+  810  docker system prune -fa
+  811  docker images
+  812  docker ps
+  813  docker ps -a
+  814  docker stop webserver2
+  815  docker stop webserver1
+  816  docker images
+  817  docker system prune -fa
+  818  docker images
+
+
