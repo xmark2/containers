@@ -57,4 +57,27 @@
   817  docker system prune -fa
   818  docker images
 
+  820  ifconfig
+  821  docker network ls
+  822  docker network inspect bridge
+  823  docker network inspect host
+  824  docker network inspect none
+  825  docker run -itd --network none --name nonenet alpine:latest
+  826  docker ps
+  827  docker inspect nonenet
+  828  docker exec -it nonenet /bin/sh
 
+
+	ip a
+	ping 8.8.8.8
+	ifconfig
+
+  830  docker run -itd --network host --name hostnet1 alpine:latest
+  831  docker inspect hostnet1
+  832  docker exec -it hostnet1 /bin/sh
+  833  docker run -itd --network host --name hostnet2 nginx:latest
+  834  docker run -itd --network host --name hostnet3 nginx:latest
+  835  docker ps -a
+  836  docker logs hostnet3
+  837  docker network create -d macvlan --subnet=192.168.122.0/24 --gateway=192.168.122.1 -o parent=enp1s0 macvlan-net1
+  838  docker run -itd --name macvlan1 --network macvlan-net1 alpine:latest
