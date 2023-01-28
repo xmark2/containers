@@ -1,0 +1,29 @@
+  869  cd 709_sharing_volumes/
+  870  docker run -v /newvol --name c1 -it ubuntu:14.04 bash
+  871  docker ps -a
+  872  docker run -volumes-from c1 --name c2 -it ubuntu:14.04 bash
+  873  docker run --name c2 --volumes-from c1 -it ubuntu:14.04 bash
+  874  docker run attach c1
+  875  docker attach c1
+  876  docker run -v /newvol --name c1 -it ubuntu:14.04 bash
+  877  docker ps -a
+  878  docker attach c1
+  879  docker start c1
+  880  docker attach c1
+  881  docker ps -a
+  882  history > notes.txt
+  883  docker image prune
+  884  docker ps -a
+  885  docker ps
+  886  docker images
+  887  docker system prune -fa
+  888  docker images
+  889  docker rmi ubuntu
+  890  docker stop ubuntu
+  891  docker ps -a
+  892  docker stop c2
+  893  docker system prune -fa
+  894  docker images
+  895  docker ps -a
+  896  docker ps
+  897  docker image prune
