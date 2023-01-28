@@ -2,11 +2,6 @@
 
 
 # The Docker Workshop
-[![GitHub issues](https://img.shields.io/github/issues/PacktWorkshops/The-Docker-Workshop.svg)](https://github.com/PacktWorkshops/The-Docker-Workshop/issues)
-[![GitHub forks](https://img.shields.io/github/forks/PacktWorkshops/The-Docker-Workshop.svg)](https://github.com/PacktWorkshops/The-Docker-Workshop/network)
-[![GitHub stars](https://img.shields.io/github/stars/PacktWorkshops/The-Docker-Workshop.svg)](https://github.com/PacktWorkshops/The-Docker-Workshop/stargazers)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/PacktWorkshops/The-Docker-Workshop/pulls)
-
 This is the repository for
 [The Docker Workshop](https://github.com/PacktWorkshops/The-Docker-Workshop), 
 published by [Packt](https://www.packtpub.com/?utm_source=github). 
@@ -20,19 +15,31 @@ To get started with the project files, you'll need to:
 * Create a free [Docker account](https://hub.docker.com/)
 * Install Docker
 
-## About The Docker Workshop
-With the help of top-notch examples and activities, [The Docker Workshop](https://github.com/PacktWorkshops/The-Docker-Workshop) workshop helps you to get practical with Docker containers. You’ll learn its usage, advantages, and best practices to make the software deployment process smoother.	
 
-## What you will learn
-* Get a solid understanding of how Docker containers work
-* Network Docker images and environments to allow communication between services
-* Build and publish docker images from a CI/CD pipeline
-* Use Docker Swarm to implement production-ready environments
-* Find out how to replace Swarm with Kubernetes clusters
-* Extend your Docker images with Plugins
+# How to create a great dev environment with Docker
+[Youtube](https://www.youtube.com/watch?v=0H2miBK_gAk)
 
-## Related Workshops
-If you've found this repository useful, you might want to check out some of our other workshop titles:
-* [The Kubernetes Workshop](https://www.amazon.com/Kubernetes-Workshop-Interactive-Approach-Learning/dp/1838820752/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1611063544&sr=1-1&utm_source=github&utm_medium=repository&utm_campaign=9781838820756&utm_term=Kubernetes&utm_content=The%20Kubernetes%20Workshop)
-* [The Java Workshop](https://www.amazon.com/Java-Workshop-Interactive-Approach-Learning-ebook/dp/B07ZX1NDZ6/ref=sr_1_1?dchild=1&keywords=The%20Java%20Workshop&qid=1611053201&sr=8-1&utm_source=GitHub&utm_medium=Repository&utm_campaign=9781838986698&utm_term=Java&utm_content=The%20Java%20Workshop)
-* [The C++ Workshop](https://www.amazon.com/Workshop-New-Interactive-Approach-Learning/dp/183921662X/ref=sr_1_1?dchild=1&keywords=The%20C%2B%2B%20Workshop&qid=1610976829&sr=8-1&utm_source=github&utm_medium=repository&utm_campaign=9781839216626&utm_term=C%2B%2B&utm_content=The%20C%2B%2B%20Workshop)
+[Repo](https://github.com/patrickloeber/python-docker-tutorial)
+
+  687  cd docker_dev_environment/
+  688  docker build -t fastapi-image .
+  700  docker images
+  701  docker run --name fastapi-container -p 80:80 fastapi-image
+  702  docker ps -a
+  703  docker rm fastapi-container
+  704  docker run --name fastapi-container -p 80:80 -d fastapi-image
+  705  docker ps -a
+  706  docker stop fastapi-container
+  707  docker rm fastapi-container
+  708  docker run --name fastapi-container -p 80:80 -d -v $(pwd):/code fastapi-image
+
+# Extensions for Visual Studio Code
+  * python
+  * docker
+  * dev containers
+
+  712  docker stop fastapi-container
+  713  docker rm fastapi-container
+
+# Docker Compose
+
