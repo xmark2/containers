@@ -21,25 +21,35 @@ To get started with the project files, you'll need to:
 
 [Repo](https://github.com/patrickloeber/python-docker-tutorial)
 
-  687  cd docker_dev_environment/
-  688  docker build -t fastapi-image .
-  700  docker images
-  701  docker run --name fastapi-container -p 80:80 fastapi-image
-  702  docker ps -a
-  703  docker rm fastapi-container
-  704  docker run --name fastapi-container -p 80:80 -d fastapi-image
-  705  docker ps -a
-  706  docker stop fastapi-container
-  707  docker rm fastapi-container
-  708  docker run --name fastapi-container -p 80:80 -d -v $(pwd):/code fastapi-image
+*  cd docker_dev_environment/
+*  docker build -t fastapi-image .
+*  docker images
+*  docker run --name fastapi-container -p 80:80 fastapi-image
+*  docker ps -a
+*  docker rm fastapi-container
+*  docker run --name fastapi-container -p 80:80 -d fastapi-image
+*  docker ps -a
+*  docker stop fastapi-container
+*  docker rm fastapi-container
+*  docker run --name fastapi-container -p 80:80 -d -v $(pwd):/code fastapi-image
 
 # Extensions for Visual Studio Code
   * python
   * docker
   * dev containers
 
-  712  docker stop fastapi-container
-  713  docker rm fastapi-container
+*  docker stop fastapi-container
+*  docker rm fastapi-container
 
 # Docker Compose
 
+*  touch docker-compose.yml
+*  docker-compose up
+*  docker-compose down
+*  docker-compose up --build -d
+*  docker ps
+*  docker-compose up --build -d
+*  docker ps -a
+*  docker-compose down
+*  docker-compose up --build -d
+*  docker-compose down
