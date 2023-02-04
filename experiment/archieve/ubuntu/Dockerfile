@@ -7,7 +7,7 @@ WORKDIR /src/
 # COPY "./test.sh" .
 COPY ./src/* /src/
 ADD https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg /src/saved_picture.jpg
-RUN chmod +x /src/test.sh
+RUN chmod +x /code/test.sh
 # CMD ["chmod", "+x", "/test.sh"]
 #CMD ["echo", "The Docker Workshop"]
 ENTRYPOINT ["/src/test.sh"]

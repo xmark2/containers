@@ -3,15 +3,43 @@
 case $1 in
 "image")
   echo "Creating welcome builder image"
-  docker image build -t pyimage:v1 .
+  cd exp1
+  docker image build -t ubu:v1 .
+  cd ..
 esac
 
 case $1 in
-"container")
+"cont")
   echo "Running container"
-  docker run --name pycont pyimage:v1
+  docker run -it --name ubu_cont ubu:v1 bash
 esac
 
+case $1 in
+"cont-d")
+  echo "Running container in detached mode"
+  docker run -itd --name ubu_cont ubu:v1 bash
+esac
+
+case $1 in
+"cont-v")
+  echo "Running container in detached mode"
+  cd exp1
+  docker run -itd --name ubu_cont -v $(pwd)/code:/code ubu:v1
+  docker run -itd --name ubu_cont2 -v $(pwd)/code:/code ubu:v1
+  cd ..
+esac
+
+case $1 in
+"rmc")
+  echo "removing containers"
+  docker rm $(docker ps -a -q)
+esac
+
+case $1 in
+"stop")
+  echo "removing containers"
+  docker stop $(docker ps -a -q)
+esac
 
 case $1 in
 "info")
