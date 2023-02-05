@@ -1,0 +1,43 @@
+
+  688  cd docker_dev_environment/
+  689  docker build -t fastapi-image .
+  690  history > notes.txt
+  691  docker images
+  692  docker rmi ubuntu
+  693  docker ps -a
+  694  docker rm testsize
+  695  docker ps -a
+  696  docker system prune -fa
+  697  docker images
+  698  docker ps
+  699  docker ps -a
+  700  docker build -t fastapi-image .
+  701  docker images
+  702  docker run --name fastapi-container -p 80:80 fastapi-image
+  703  docker ps -a
+  704  docker rm fastapi-container
+  705  docker run --name fastapi-container -p 80:80 -d fastapi-image
+  706  docker ps -a
+  707  docker stop fastapi-container
+  708  docker rm fastapi-container
+  709  docker run --name fastapi-container -p 80:80 -d -v $(pwd):/code fastapi-image
+  710  history > notes.txt
+  711  docker ps -a
+  712  docker stop fastapi-container
+  713  docker rm fastapi-container
+  714  docker ps
+  715  docker ps -a
+  716  clear
+  717  history > notes.txt
+  718  touch docker-compose.yml
+  719  docker-compose up
+  720  docker-compose down
+  721  docker-compose up --build -d
+  722  docker ps
+  723  docker-compose up --build -d
+  724  docker ps -a
+  725  docker-compose down
+  726  docker-compose up --build -d
+  727  docker-compose down
+  728  docker-compose up --build -d
+  729  history > notes.txt

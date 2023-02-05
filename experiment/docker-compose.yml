@@ -1,15 +1,19 @@
 services:
   app:
-    build: .
+    build: ./exp1
+    image: ubu:v1
     container_name: ubu_cont
-#    command: uvicorn code.main:app --host 0.0.0.0 --port 80 --reload
-#    ports:
-#      - 80:80
-#      - 5678:5678
     volumes:
-      - .:/code
-    depends_on:
-      - redis
+      - .exp1/code:/code
+
+#  app2:
+#    build: ./exp1
+#    image: ubu:v2
+#    container_name: ubu_cont2
+#    volumes:
+#      - exp1/code.:/code
+#    depends_on:
+#      - redis
   
-  redis:
-    image: redis:alpine
+#  redis:
+#    image: redis:alpine

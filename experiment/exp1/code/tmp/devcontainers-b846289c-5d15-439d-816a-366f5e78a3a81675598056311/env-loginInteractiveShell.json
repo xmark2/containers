@@ -1,0 +1,12 @@
+{
+	"HOSTNAME": "d01f4fe80e03",
+	"REMOTE_CONTAINERS_SOCKETS": "[\"/tmp/vscode-ssh-auth-b03dbe874f994de8d26f2bb49ece23ec650a887f.sock\",\"/tmp/.X11-unix/X0\"]",
+	"LS_COLORS": "",
+	"REMOTE_CONTAINERS_IPC": "/tmp/vscode-remote-containers-ipc-b03dbe874f994de8d26f2bb49ece23ec650a887f.sock",
+	"PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+	"SHLVL": "1",
+	"HOME": "/root",
+	"LESSOPEN": "| /usr/bin/lesspipe %s",
+	"LESSCLOSE": "/usr/bin/lesspipe %s %s",
+	"_": "/bin/cat"
+}
