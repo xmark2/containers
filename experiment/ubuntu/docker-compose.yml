@@ -1,0 +1,8 @@
+services:
+  ubu_app:
+    build: .
+    container_name: ubu_cont
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    volumes:
+      - ./mycodes:/myproject

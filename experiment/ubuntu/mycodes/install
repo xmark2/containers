@@ -1,0 +1,22 @@
+#!/bin/bash
+
+current_date=$(date +%Y-%m-%d__%H:%M:%S)
+logfile=$(pwd)/"$0".log
+env_setup_file=$(pwd)/env_setup.txt
+current_dir=$(pwd)
+
+for package in wget nano curl mlocate git;
+  do
+    which $package
+
+    if [ $? -ne 0 ]; then
+      apt install $package -y
+      echo "$current_date -- The installation of $package was successful.">>$logfile
+      echo "The new command is available here:"
+      which $package
+    else
+      echo $package "'s already installed:"
+      which $package
+    fi
+  done
+

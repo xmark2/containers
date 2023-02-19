@@ -1,0 +1,3 @@
+  501  docker-compose up --build -d
+  502  docker-compose down
+  503  docker system prune -fa

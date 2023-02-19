@@ -37,7 +37,7 @@ esac
 
 case $1 in
 "stop")
-  echo "removing containers"
+  echo "stop all containers"
   docker stop $(docker ps -a -q)
 esac
 
