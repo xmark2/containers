@@ -1,0 +1,20 @@
+services:
+#  ubu_app:
+#    image: ubuntu:22.04
+#    container_name: ubu_cont
+#    stdin_open: true # docker run -i
+#    tty: true        # docker run -t
+#    volumes:
+#      - ./mycodes:/myproject
+
+  pyspark_app:
+    build: .
+    container_name: python_cont
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    volumes:
+      - ./mycodes:/myproject
+#    links:
+#      - ubu_app
+      #    depends_on:
+#      - ubu_app
