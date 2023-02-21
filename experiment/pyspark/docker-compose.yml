@@ -9,7 +9,7 @@ services:
 
   pyspark_app:
     build: .
-    container_name: python_cont
+    container_name: spark_docker_v1
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     volumes:
