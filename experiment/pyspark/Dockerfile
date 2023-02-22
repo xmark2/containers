@@ -14,6 +14,10 @@ JAVA_VERSION=11
 ENV JAVA_HOME="/home/jdk-${JAVA_VERSION}.0.2"
 ENV PATH="${JAVA_HOME}/bin/:${PATH}"
 
+# SET ENV SPARK_FILE ENV, DOWNLOAD_URL
+ENV SPARK_FILE="spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" \
+DOWNLOAD_URL_SPARK="https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/${SPARK_FILE}"
+
 # DOWNLOAD JAVA 11 AND INSTALL
 #RUN DOWNLOAD_URL="https://download.java.net/java/GA/jdk${JAVA_VERSION}/9/GPL/openjdk-${JAVA_VERSION}.0.2_linux-x64_bin.tar.gz"  \
 #    && TMP_DIR="$(mktemp -d)" && curl -fL "${DOWNLOAD_URL}" --output "${TMP_DIR}/openjdk-${JAVA_VERSION}.0.2_linux-x64_bin.tar.gz" \
@@ -21,9 +25,13 @@ ENV PATH="${JAVA_HOME}/bin/:${PATH}"
 #    && rm -rf "${TMP_DIR}" && java --version
 
 # DOWNLOAD SPARK AND INSTALL
-RUN DOWNLOAD_URL_SPARK="https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" \
-    && mkdir -p /home/spark && wget "${DOWNLOAD_URL_SPARK}" -P /home/spark  \
-    && tar xvf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz
+RUN mkdir -p /home/spark && wget "${DOWNLOAD_URL_SPARK}" -P /home/spark
+#RUN wget "${DOWNLOAD_URL_SPARK}" -P /myproject/spark
+#RUN ls -l /home/spark
+#RUN ./myproject/install
+#RUN if -f ${SPARK_FILE}; then echo "file exists" else echo "file not exists" fi
+#RUN chmod +x /usr/local/bin/docker-compose
+#RUN tar -xf /home/spark/${SPARK_FILE} -C /home/spark --strip-components=1 && rm /home/spark/${SPARK_FILE}
 #    && mv spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} /mnt/spark
 #    && wget --no-verbose -O apache-spark.tgz  "${DOWNLOAD_URL_SPARK}" && mkdir -p /home/spark  \
 #    && tar -xf apache-spark.tgz -C /home/spark --strip-components=1 && rm apache-spark.tgz

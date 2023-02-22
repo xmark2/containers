@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#current_date=$(date +%Y-%m-%d__%H:%M:%S)
+#logfile=$(pwd)/"$0".log
+#env_setup_file=$(pwd)/env_setup.txt
+#current_dir=$(pwd)
+
+tar -xf /home/spark/spark-3.3.2-bin-hadoop3.tgz -C /home/spark --strip-components=1 && rm /home/spark/spark-3.3.2-bin-hadoop3.tgz
+#echo "$current_date -- The spark extraction was successful.">>$logfile
+#for package in wget nano curl mlocate git;
+#  do
+#    which $package
+#
+#    if [ $? -ne 0 ]; then
+#      apt install $package -y
+#      echo "$current_date -- The installation of $package was successful.">>$logfile
+#      echo "The new command is available here:"
+#      which $package
+#    else
+#      echo $package "'s already installed:"
+#      which $package
+#    fi
+#  done
+
