@@ -1,7 +1,7 @@
 FROM python:3.9.1
 
 RUN apt-get install curl wget tar
-#RUN pip install pandas
+RUN pip install pandas
 
 #COPY fhvhv_tripdata_2021-01.csv.gz .
 
@@ -15,33 +15,18 @@ ENV JAVA_HOME="/home/jdk-${JAVA_VERSION}.0.2"
 ENV PATH="${JAVA_HOME}/bin/:${PATH}"
 
 # SET ENV SPARK_FILE ENV, DOWNLOAD_URL
-ENV SPARK_FILE="spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" \
-DOWNLOAD_URL_SPARK="https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/${SPARK_FILE}"
+ENV SPARK_FILE="spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz"
+ENV DOWNLOAD_URL_SPARK="https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/${SPARK_FILE}"
 
 # DOWNLOAD JAVA 11 AND INSTALL
-#RUN DOWNLOAD_URL="https://download.java.net/java/GA/jdk${JAVA_VERSION}/9/GPL/openjdk-${JAVA_VERSION}.0.2_linux-x64_bin.tar.gz"  \
-#    && TMP_DIR="$(mktemp -d)" && curl -fL "${DOWNLOAD_URL}" --output "${TMP_DIR}/openjdk-${JAVA_VERSION}.0.2_linux-x64_bin.tar.gz" \
-#    && mkdir -p "${JAVA_HOME}" && tar xzf "${TMP_DIR}/openjdk-${JAVA_VERSION}.0.2_linux-x64_bin.tar.gz" -C "${JAVA_HOME}" --strip-components=1 \
-#    && rm -rf "${TMP_DIR}" && java --version
+RUN DOWNLOAD_URL="https://download.java.net/java/GA/jdk${JAVA_VERSION}/9/GPL/openjdk-${JAVA_VERSION}.0.2_linux-x64_bin.tar.gz" \
+    && TMP_DIR="$(mktemp -d)" && curl -fL "${DOWNLOAD_URL}" --output "${TMP_DIR}/openjdk-${JAVA_VERSION}.0.2_linux-x64_bin.tar.gz" \
+    && mkdir -p "${JAVA_HOME}" && tar xzf "${TMP_DIR}/openjdk-${JAVA_VERSION}.0.2_linux-x64_bin.tar.gz" -C "${JAVA_HOME}" --strip-components=1 \
+    && rm -rf "${TMP_DIR}" && java --version
 
 # DOWNLOAD SPARK AND INSTALL
 RUN mkdir -p /home/spark && wget "${DOWNLOAD_URL_SPARK}" -P /home/spark
-#RUN wget "${DOWNLOAD_URL_SPARK}" -P /myproject/spark
-#RUN ls -l /home/spark
-#RUN ./myproject/install
-#RUN if -f ${SPARK_FILE}; then echo "file exists" else echo "file not exists" fi
-#RUN chmod +x /usr/local/bin/docker-compose
-#RUN tar -xf /home/spark/${SPARK_FILE} -C /home/spark --strip-components=1 && rm /home/spark/${SPARK_FILE}
-#    && mv spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} /mnt/spark
-#    && wget --no-verbose -O apache-spark.tgz  "${DOWNLOAD_URL_SPARK}" && mkdir -p /home/spark  \
-#    && tar -xf apache-spark.tgz -C /home/spark --strip-components=1 && rm apache-spark.tgz
-
-# DOWNLOAD SPARK AND INSTALL
-#RUN DOWNLOAD_URL_SPARK="https://www.apache.org/dyn/closer.lua/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz" \
-#    && wget --no-verbose -O apache-spark.tgz  "${DOWNLOAD_URL_SPARK}"\
-#    && mkdir -p /home/spark \
-#    && tar -xf apache-spark.tgz -C /home/spark --strip-components=1 \
-#    && rm apache-spark.tgz
+RUN tar -xf /home/spark/${SPARK_FILE} -C /home/spark --strip-components=1
 
 # SET SPARK ENV VARIABLES
 ENV SPARK_HOME="/home/spark"
