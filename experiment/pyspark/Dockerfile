@@ -3,7 +3,7 @@ FROM python:3.9.1
 RUN apt-get install curl wget tar
 RUN pip install pandas
 
-#COPY fhvhv_tripdata_2021-01.csv.gz .
+WORKDIR /myproject
 
 # VERSIONS
 ENV SPARK_VERSION=3.3.2 \
