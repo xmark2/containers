@@ -1,0 +1,11 @@
+  615  docker-compose up --build -d
+  617  docker-compose down
+  618  docker system prune -fa
+
+
+# docker build -t spark_docker_v1 .
+# docker run --rm -it -p 4040:4040 spark_docker_v1
+# https://levelup.gitconnected.com/how-to-run-spark-with-docker-c6287a11a437
+
+
+http://127.0.0.1:8888/tree
