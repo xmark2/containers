@@ -1,0 +1,31 @@
+#!/bin/bash
+
+current_date=$(date +%Y-%m-%d__%H:%M:%S)
+logfile=$(pwd)/"$0".log
+
+if [ ! -f $logfile ]; then
+    echo "$current_date -- Welcome to pyspark container.">>$logfile
+
+    if [ -f /home/spark/conf/spark-defaults.conf ]; then
+      echo "spark.driver.extraJavaOptions      -Dlog4j.configuration=file:log4j.properties -Dspark.yarn.app.container.log.dir=app-logs -Dlogfile.name=mysparkapp">>/home/spark/conf/spark-defaults.conf
+      echo "$current_date -- Log4j setup completed with Dlogfile.name=mysparkapp.">>$logfile
+    else
+      if [ -f /home/spark/conf/spark-defaults.conf.template ]; then
+        mv /home/spark/conf/spark-defaults.conf.template /home/spark/conf/spark-defaults.conf
+        echo "spark.driver.extraJavaOptions      -Dlog4j.configuration=file:log4j.properties -Dspark.yarn.app.container.log.dir=app-logs -Dlogfile.name=mysparkapp">>/home/spark/conf/spark-defaults.conf
+        echo "$current_date -- Log4j setup completed with Dlogfile.name=mysparkapp.">>$logfile
+      fi
+    fi
+
+
+fi
+
+if [ $1 ]; then
+    apt install $1 -y
+
+    if [ $? -eq 1 ]; then
+      echo "$current_date -- The installation of $1 was successful.">>$logfile
+    else
+      echo "$current_date -- The installation of $1 was failed.">>$logfile
+    fi
+fi

@@ -1,4 +1,4 @@
-FROM python:3.9.1
+FROM continuumio/anaconda3
 
 RUN apt-get install curl wget tar
 COPY ./requirements.txt ./
