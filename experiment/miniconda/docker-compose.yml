@@ -1,0 +1,13 @@
+services:
+
+  miniconda_app:
+    image: continuumio/anaconda3
+    command: /bin/bash -c "/opt/conda/bin/conda install jupyter -y --quiet && mkdir /opt/notebooks && /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root"
+#    build: .
+    container_name: miniconda
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    ports:
+      - 8888:8888
+    volumes:
+      - ./mycont_vol:/opt/notebooks
