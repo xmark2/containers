@@ -1,10 +1,8 @@
 services:
 
   pyspark_miniconda_app:
-    build: .
-    command: /bin/bash -c "/opt/conda/bin/conda install jupyter -y --quiet && mkdir /opt/notebooks && /opt/conda/bin/jupyter notebook --notebook-dir=/myproject --ip='*' --port=8888 --no-browser --allow-root"
-      #    build: .
-    container_name: miniconda_spark
+    image: jupyter/pyspark-notebook
+    container_name: pyspark_miniconda
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     ports:
