@@ -1,0 +1,60 @@
+# !/bin/bash
+current_date=$(date +%Y-%m-%d__%H:%M:%S)
+logfile=$(pwd)/"$0".log
+
+
+
+brew doctor
+brew -v
+
+if [ $? -ne 0 ]; then
+	apt update
+	apt install build-essential git
+	# apt install brew
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/ubuntu/.profile
+
+	brew -v
+
+	if [ $? -ne 0 ]; then
+    	echo "$current_date -- Installation of brew completed.">>$logfile
+    fi
+else
+	echo "brew has already installed."
+fi
+
+kubectl version --client
+if [ $? -ne 0 ]; then
+	brew install kubectl
+	if [ $? -ne 0 ]; then
+		echo "$current_date -- Installation of kubernetes completed.">>$logfile
+	else
+		echo "start kubernetes:">>$logfile
+		echo "-----">>$logfile
+		echo "kubectl">>$logfile
+		echo "-----">>$logfile
+	fi
+fi
+
+minikube version
+if [ $? -ne 0 ]; then
+	apt install -y curl wget apt-transport-https
+	wget https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+	cp minikube-linux-amd64 /usr/local/bin/minikube
+	chmod +x /usr/local/bin/minikube
+	minikube version
+	echo "$current_date -- Installation of minikube completed.">>$logfile
+	# curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-arm64
+	# sudo install minikube-linux-arm64 /usr/local/bin/minikube
+else
+	echo "start minikube:">>$logfile
+	echo "-----">>$logfile
+	echo "minikube start">>$logfile
+	echo "-----">>$logfile
+fi
+
+k9s info
+if [ $? -ne 0 ]; then
+	brew install derailed/k9s/k9s
+	echo "$current_date -- Installation of k9s completed.">>$logfile
+fi
