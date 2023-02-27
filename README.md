@@ -67,3 +67,14 @@ To get started with the project files, you'll need to:
 
 * [minikube](https://minikube.sigs.k8s.io/docs/start/)
 * [k9s](https://github.com/derailed/k9s)
+* brew install mysql
+
+```
+MySQL is configured to only allow connections from localhost by default
+
+To connect run:
+    mysql -u root
+
+To start mysql now and restart at login:
+  brew services start mysql
+```
