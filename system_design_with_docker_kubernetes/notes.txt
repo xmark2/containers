@@ -1,0 +1,34 @@
+
+  588  (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /.bashrc
+  589  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  590  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  591  (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/ubuntu/.profile
+  592  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  593  sudo apt-get install build-essential
+  594  brew doctor
+  595  brew -v
+  596  minikube start
+  597  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-arm64
+  598  sudo install minikube-linux-arm64 /usr/local/bin/minikube
+  599  minikube start
+  600  sudo minikube start
+  601  minikube start
+  602  k9s
+  603  minikube start
+  604  k9s
+  605  brew install mysql
+  606  docker --version
+  607  kubectl
+  608  minikube start
+  609  k9s
+  610  mysql -uroot
+  611  which mysql
+  612  brew services start mysql
+  613  mysql -uroot
+  614  ls -l
+  615  cd PycharmProjects/
+  616  cd containers/
+  617  ls -l
+  618  cd system_design_with_docker_kubernetes/
+  619  ls -l
+  620  history > notes.txt

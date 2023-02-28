@@ -58,3 +58,12 @@ if [ $? -ne 0 ]; then
 	brew install derailed/k9s/k9s
 	echo "$current_date -- Installation of k9s completed.">>$logfile
 fi
+
+which mysql
+if [ $? -ne 0 ]; then
+	brew install mysql
+	brew services start mysql
+	mysql -uroot
+	echo "$current_date -- Installation of mysql completed.">>$logfile
+fi
+

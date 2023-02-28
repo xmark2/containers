@@ -3,12 +3,11 @@
 ------
 
 
-
 # The Docker Workshop
-This is the repository for
+This is based on the repository for
 [The Docker Workshop](https://github.com/PacktWorkshops/The-Docker-Workshop), 
 published by [Packt](https://www.packtpub.com/?utm_source=github). 
-It contains all the supporting project files necessary to work through the course from start to finish.
+
 
 #### Requirements and Setup
 <a href="https://www.amazon.com/Docker-Workshop-containers-effectively-development/dp/1838983449/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1611064488&sr=1-1&utm_source=github&utm_medium=repository&utm_campaign=9781838983444&utm_term=Docker&utm_content=The%20Docker%20Workshop"><img src="https://github.com/PacktWorkshops/Workshop-Covers/blob/master/The%20Docker%20Workshop.png" alt="The Docker Workshop" height="290px" width="230px" align="right" this.target="_blank"></a>
@@ -67,7 +66,11 @@ To get started with the project files, you'll need to:
 
 * [minikube](https://minikube.sigs.k8s.io/docs/start/)
 * [k9s](https://github.com/derailed/k9s)
+---
 * brew install mysql
+* brew services start mysql 
+* mysql -uroot
+---
 
 ```
 MySQL is configured to only allow connections from localhost by default
