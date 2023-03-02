@@ -66,6 +66,7 @@ To get started with the project files, you'll need to:
 
 * [minikube](https://minikube.sigs.k8s.io/docs/start/)
 * [k9s](https://github.com/derailed/k9s)
+* [source repo](https://github.com/selikapro/microservices-python)
 ---
 * brew install mysql
 * brew services start mysql 
