@@ -103,3 +103,13 @@ $ pip install mysqlclient
 
 "
 ```
+
+### run mysql 
+
+```
+mysql -uroot < init.sql
+
+mysql -uroot -e "DROP USER auth_user@localhost"
+mysql -uroot -e "DROP DATABASE auth"
+```
+
