@@ -72,6 +72,11 @@ To get started with the project files, you'll need to:
 * brew services start mysql 
 * mysql -uroot
 ---
+---
+* brew remove mysql 
+* brew cleanup
+* [install mysql ubuntu22.04](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-22-04)
+* [install2 mysql ubuntu22.04](https://askubuntu.com/questions/1405475/unable-to-install-mysql-server-on-ubuntu-22-04-lts)
 
 ```
 MySQL is configured to only allow connections from localhost by default
