@@ -82,3 +82,19 @@ To connect run:
 To start mysql now and restart at login:
   brew services start mysql
 ```
+
+### solution for "NameError: name '_mysql' is not defined" issue:
+https://github.com/PowerDNS-Admin/PowerDNS-Admin/issues/570
+```commandline
+
+"
+
+You may need to install the Python 3 and MySQL development headers and libraries like so:
+
+$ sudo apt-get install python3-dev default-libmysqlclient-dev build-essential # Debian / Ubunt
+
+Then you can install mysqlclient via pip now:
+$ pip install mysqlclient
+
+"
+```
