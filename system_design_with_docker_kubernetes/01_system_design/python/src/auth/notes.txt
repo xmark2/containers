@@ -1,0 +1,131 @@
+  899  mkdir system_design
+  900  cd system_design/
+  901  cd ..
+  902  mkdir 00_installation
+  903  which mysql
+  904  cd 01_system_design/
+  905  mkdir python
+  906  cd python/
+  907  mkdir src
+  908  cd src
+  909  clear
+  910  mkdir auth
+  911  cd auth/
+  912  python3 -m venv venv
+  913  ls -l
+  914  rm -r venv
+  915  ls -l
+  916  cd ..
+  917  rm -r auth/
+  918  mkdir auth
+  919  cd auth/
+  920  ls -l
+  921  rm -r venv
+  922  ls -l
+  923  cd ..
+  924  rm -r auth
+  925  ls -l
+  926  mkdir auth
+  927  cd ..
+  928  rm -r venv
+  929  ls -l
+  930  cd src
+  931  cd auth
+  932  ls -l
+  933  mkdir venv
+  934  pip  list
+  935  history
+  936  touch folders.txt
+  937  nano folders.txt 
+  938  pip list
+  939  pip freeze > requirements.txt
+  940  touch server.py
+  941  pip freeze > requirements.txt
+  942  export MYSQL_HOST=localhost
+  943  ls -l
+  944  pip install -r requirements.txt 
+  945  python -version
+  946  python --version
+  947  pip list
+  948  cd ..
+  949  pip list
+  950  pip install -r requirements.txt 
+  951  cd auth/
+  952  pip install -r requirements.txt 
+  953  echo $localhost
+  954  echo $MYSQL_HOST
+  955  export MYSQL_HOST=localhost
+  956  echo $MYSQL_HOST
+  957  server.py
+  958  python server.py
+  959  python3 server.py
+  960  pip install mysql
+  961  wget https://github.com/farcepest/MySQL-python/tarball/master -O MySQL-python.tar.gz
+  962  tar -xvf MySQL-python.tar.gz
+  963  cd farcepest-MySQL-python-*
+  964  sudo python setup.py install
+  965  ls -l
+  966  tar -xvf MySQL-python.tar.gz
+  967  rm MySQL-python.tar.gz 
+  968  pip install mysql-python
+  969  pip install mysqlclient
+  970  pip list
+  971  pip install mysqlserver
+  972  brew install mysql-connector-c
+  973  brew install --cask mysql-connector-python
+  974  brew install mysql-connector-python
+  975  brew install mysql-connector
+  976  pip install mysql-connector-python
+  977  pip install mysql-connector-python==8.0.11
+  978  mysql-connector-python
+  979  export MYSQL_HOST=localhost
+  980  echo $MYSQL_HOST 
+  981  pip install MySQL-python
+  982  pip install PyMySQL
+  983  pip list
+  984  brew install mysql-client
+  985  pip install mysql
+  986  sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
+  987  pip install mysqlclient
+  988  ls -l
+  989  pip install -r requirements.txt 
+  990  clean
+  991  clear
+  992  mysql -uroot
+  993  mysql -uroot < init.sql
+  994  mysql -uroot
+  995  mysql -uroot < init.sql
+  996  clear
+  997  mysql -uroot
+  998  mysql -uroot -e "DROP USER auth_user@localhost"
+  999  mysql -uroot -e "DROP DATABASE auth"
+ 1000  mysql -uroot < init.sql
+ 1001  touch Dockerfile
+ 1002  pip freeze > requirements.txt 
+ 1003  docker build .
+ 1004  docker tag 48b34fd1c03895fb9a8b0774f1a74c7bb0c33998d0de306340f71e1524808fb4 xmark2/auth:latest
+ 1005  docker image ls
+ 1007  docker push xmark2/auth:latest
+ 1008  history
+ 1009  history > notes.txt
+ 1010  docker pull xmark2/auth:latest
+ 1011  history > notes.txt
+ 1012  mkdir manifests
+ 1013  cd manifests/
+ 1014  ls
+ 1015  touch auth-deploy.yaml
+ 1016  touch configmap.yaml
+ 1017  touch secret.yaml
+ 1018  cd ..
+ 1019  minikube start
+ 1020  cd manifests/
+ 1021  k9s
+ 1022  cd ..
+ 1023  kubectl apply -f ./
+ 1024  cd manifests/
+ 1025  kubectl apply -f ./
+ 1026  touch service.yaml
+ 1027  kubectl apply -f ./
+ 1028  k9s
+ 1029  cd ..
+ 1030  history > notes.txt
