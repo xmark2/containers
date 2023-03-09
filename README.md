@@ -113,3 +113,9 @@ mysql -uroot -e "DROP USER auth_user@localhost"
 mysql -uroot -e "DROP DATABASE auth"
 ```
 
+
+# Microservices in Python using Flask Framework | Dockerize and Deploy to Kubernetes with Helm
+
+* [Youtube](https://www.youtube.com/watch?v=SdTzwYmsgoU)
+* [github source](https://github.com/kunchalavikram1427/microservices-in-python)
+
