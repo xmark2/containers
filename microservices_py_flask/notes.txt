@@ -1,0 +1,7 @@
+  912  cd microservices_py_flask/
+  913  pip install -r requirements.txt 
+  914  pip list
+  915  docker ps
+  917  minikube start
+  918  minikube docker-env
+  919  history > notes.txt
