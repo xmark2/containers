@@ -1,8 +1,9 @@
 services:
 
-  pyspark_miniconda_app:
+  miniconda_app:
     image: jupyter/pyspark-notebook
-    container_name: pyspark_miniconda
+    container_name: pyspark
+    working_dir: "/myproject/"
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     ports:
